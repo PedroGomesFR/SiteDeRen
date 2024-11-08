@@ -47,8 +47,8 @@ header h1 {
 
 .containerCon {
     border-radius: 2%;
-    width: 600px;
-    height: 700px;
+    min-width: 600px;
+    min-height: 700px;
     background-color: #E44A62;
     display: flex;
     align-items: center;
@@ -59,6 +59,7 @@ header h1 {
     transform: translate(-50%, -50%);  /* Centre parfaitement en hauteur et en largeur */
 }
 
-.containerCon h1 {
-    margin-bottom: 300px;
-}
+.contenueConn{
+    position: absolute;
+}   
+

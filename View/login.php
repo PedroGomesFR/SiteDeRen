@@ -10,9 +10,13 @@
 
         <div class="centre-wrapper">
             <div class="containerCon">
-                <form action="Connexion">
+                <form action="#">
                     <h1>Connexion</h1>
-                    <input type="text" name="Email" placeholder="Email">
+                    <div class="contenueConn">
+                        <input type="text" name="Email" placeholder="Email">    
+                        <input type="password" name="Password" placeholder="Mot de passe">
+                        <input type="submit" value="Connexion">
+                    </div>
                 </form>
             </div>
         </div>

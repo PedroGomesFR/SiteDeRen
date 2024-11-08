@@ -14,7 +14,7 @@
                 <h1>Rencontre plus</h1>
 
                 <div class="liens">
-                    <a href="">Connexion/Inscription</a>
+                    <a href="../login.php">Connexion/Inscription</a>
                     <a href="">Annonce</a>
                     <a href="">Recherche</a>
                     <a href="">Likes</a>
