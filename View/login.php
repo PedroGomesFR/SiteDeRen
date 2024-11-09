@@ -23,6 +23,9 @@
                 <div class="form-submit">
                     <input type="submit" value="Connexion" class="boutton">
                 </div>
+                <div class="form-submit">
+                    <a href="register.php">Pas de compte?</a>
+                </div>
             </form>
         </div>
     </body>
