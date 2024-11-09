@@ -36,29 +36,65 @@ header h1 {
     color: white;
 }
 
-.center-wrapper {
-    position: relative;           /* Permet à .containerCon de se positionner par rapport à lui */
-    width: 100%;
-    height: 100vh;               /* Occupe toute la hauteur de la fenêtre */
+.container {
     display: flex;
-    justify-content: center;     /* Centre horizontalement */
-    align-items: center;         /* Centre verticalement */
-}
-
-.containerCon {
-    border-radius: 2%;
-    width: 600px;
-    height: 700px;
-    background-color: #E44A62;
-    display: flex;
-    align-items: center;
+    flex-direction: column;  /* Added this */
+    align-items: center;     /* Added this */
     justify-content: center;
-    position: absolute;         /* Permet un centrage précis */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* Centre parfaitement en hauteur et en largeur */
+    background-color: #E44A62;
+    border-radius: 2%;
+    max-width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-.containerCon h1 {
-    margin-bottom: 300px;
+.container img {
+    width: 100%;
 }
+
+.form-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    width: 100%;          /* Added this */
+    max-width: 300px;     /* Added this */
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;          /* Added this */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-submit {
+    margin-top: 1.5rem;
+    display: flex;         /* Added this */
+    justify-content: center; /* Added this */
+    width: 100%;          /* Added this */
+}
+
+.boutton {
+    width: 100px;
+    background-color: #343434;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;    /* Added this */
+}
+
+.boutton:hover {
+    background-color: black;
+}
+
