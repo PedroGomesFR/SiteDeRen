@@ -1,5 +1,6 @@
 <?php
-class Database {
+class DataBase {
+    //connexion BDD
     private $host = "localhost";
     private $db_name = "rencontreplus";
     private $username = "root"; 

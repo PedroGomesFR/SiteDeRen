@@ -44,10 +44,11 @@ header h1 {
     background-color: #E44A62;
     border-radius: 2%;
     max-width: 500px;
-    height: 500px;
+    min-height: 500px;
     margin: 0 auto;
     padding: 2rem;
 }
+
 .container-wrapper{
     display: flex;
     flex-direction: column;
@@ -65,7 +66,7 @@ header h1 {
     margin-bottom: 1.5rem;
 }
 
-form {
+.container form {
     width: 100%;          /* Added this */
     max-width: 300px;     /* Added this */
 }
@@ -84,6 +85,7 @@ form {
 }
 
 .form-submit {
+    color: white;
     margin-top: 1.5rem;
     display: flex;         /* Added this */
     justify-content: center; /* Added this */
