@@ -15,16 +15,16 @@ switch ($action) {
         $controller = new UserController();
         $controller->register();
         break;
-    // case 'login':
-    //     $controller = new AuthController();
-    //     $controller->login();
-    //     break;
+    case 'login':
+         $controller = new AuthController();
+        $controller->login();
+         break;
     case 'profile':
         $controller = new UserController();
         $controller->profile();
         break;
     case 'home':
-        include 'views/home.php'; // Affiche la page d'accueil si besoin
+        include 'View/home.php'; // Affiche la page d'accueil si besoin
         break;
     default:
         echo "Erreur 404 : Page non trouvée";

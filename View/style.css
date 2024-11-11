@@ -14,6 +14,14 @@ header{
     padding: 0!important;
     margin: 0!important;
 }
+
+footer{   
+    display: inline-block;
+    width: 100%;
+    background-color: #E44A62;
+    padding: 0!important;
+    margin: 0!important;
+}
 .header-container {
     display: flex;
     flex-grow: 1;
@@ -106,4 +114,6 @@ header h1 {
 .boutton:hover {
     background-color: black;
 }
-
+.piedfooter{
+    background-color: #E44A62;
+}
