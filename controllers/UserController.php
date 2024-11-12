@@ -44,8 +44,11 @@ class UserController extends BaseController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['Email'];
             $password = $_POST['Password'];
+            
+            // Appel à la méthode getUser pour tenter de se connecter
+            $userModel = new UserModel($this->db);
+            $userModel->getUser($email, $password);
         }
-   
     }
 }
 ?>

@@ -16,7 +16,7 @@ switch ($action) {
         $controller->register();
         break;
     case 'login':
-         $controller = new AuthController();
+         $controller = new UserController();
         $controller->login();
          break;
     case 'profile':

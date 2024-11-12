@@ -1,5 +1,6 @@
 <?php
 class UserModel {
+
     private $db;
     public $errorMessages = [];
 
@@ -27,19 +28,40 @@ class UserModel {
         }
     }
 
-    public function getUser($email){
+    public function getUser($email, $password) {
         session_start();
-        sql = "SELECT * FROM utilisateur WHERE Email = $email";
+        $sql = "SELECT * FROM utilisateur WHERE Email = :email";
         $stmt = $this->db->prepare($sql);
-
-        if ($stmt->execute()) {
-            return true;
+        $stmt->execute(['email' => $email]);
+    
+        $user = $stmt->fetch();
+        if ($user) {
+            if (password_verify($password, $user['MotDePasse'])) {
+                // Le mot de passe est correct
+                $_SESSION['email'] = $email;
+                $_SESSION['NomUtilisateur'] = $user['NomUtilisateur'];
+                $_SESSION['Nom'] = $user['Nom'];
+                $_SESSION['Prenom'] = $user['Prenom'];
+                $_SESSION['DateNaissance'] = $user['DateNaissance'];
+                $_SESSION['Discription'] = $user['Discription'];
+                $_SESSION['Likes'] = $user['Likes'];
+                $_SESSION['VueProfil'] = $user['VueProfil'];
+                $_SESSION['DateInscription'] = $user['DateInscription'];
+                $_SESSION['is_admin'] = $user['is_admin'];
+                header('Location: ../View/home.php');
+                exit();
+            } else {
+                // Redirection avec message d'erreur pour le mot de passe incorrect
+                header('Location: ./View/login.php?error=Mot de passe incorrect');
+                exit();
+            }
         } else {
-            $error = $stmt->errorInfo();
-            echo "Erreur lors de l'enregistrement : " . $error[2];
-            return false;
+            // Redirection avec message d'erreur pour l'email incorrect
+            header('Location: ./View/login.php?error=Email incorrect');
+            exit();
         }
     }
+    
 }
 
 ?>
