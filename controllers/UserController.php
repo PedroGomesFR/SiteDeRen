@@ -40,24 +40,12 @@ class UserController extends BaseController {
         }
     }
 
-    // Exemple d'action pour afficher le profil d'un utilisateur
-    // public function profile() {
-    //     $userModel = new UserRepository($this->db);
-
-    //     // Obtenir l'ID de l'utilisateur de la session ou d'une autre source
-    //     $userId = $_SESSION['user_id'] ?? null;
-        
-    //     if ($userId) {
-    //         $user = $userModel->getUserById($userId);
-    //         if ($user) {
-    //             // Inclure la vue du profil en passant les données utilisateur
-    //             include 'views/profile.php';
-    //         } else {
-    //             echo "Utilisateur introuvable.";
-    //         }
-    //     } else {
-    //         echo "Veuillez vous connecter pour accéder à cette page.";
-    //     }
-    // }
+    public function login() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = $_POST['Email'];
+            $password = $_POST['Password'];
+        }
+   
+    }
 }
 ?>

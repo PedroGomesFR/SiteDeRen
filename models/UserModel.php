@@ -26,6 +26,20 @@ class UserModel {
             return false;
         }
     }
+
+    public function getUser($email){
+        session_start();
+        sql = "SELECT * FROM utilisateur WHERE Email = $email";
+        $stmt = $this->db->prepare($sql);
+
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            $error = $stmt->errorInfo();
+            echo "Erreur lors de l'enregistrement : " . $error[2];
+            return false;
+        }
+    }
 }
 
 ?>
