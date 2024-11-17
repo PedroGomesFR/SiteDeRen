@@ -48,7 +48,8 @@ class UserModel {
                 $_SESSION['VueProfil'] = $user['VueProfil'];
                 $_SESSION['DateInscription'] = $user['DateInscription'];
                 $_SESSION['is_admin'] = $user['is_admin'];
-                header('Location: ../View/home.php');
+                echo "connectéé";
+                header('location: ../View/home.php');
                 exit();
             } else {
                 // Redirection avec message d'erreur pour le mot de passe incorrect

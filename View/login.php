@@ -22,7 +22,7 @@
                         <input type="password" name="Password" placeholder="Mot de passe" class="mdp">
                     </div>
                     <div class="form-submit">
-                        <input type="submit" value="Connexion" class="boutton">
+                        <input type="submit" value="Connexion" name="Connexion" class="boutton">
                     </div>
                     <div class="form-submit">
                         <a href="register.php">Pas de compte?</a>
