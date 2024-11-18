@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Rencontre Plus</title>
-    <!-- couleur rose : #E44A62  couleur noir/gris : #343434  -->
-</head>
-<body>
-    <?php include('./templates/header.php')?>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/SiteDeRen/View/style.css">
+        <title>Rencontre Plus</title>
+        <!-- couleur rose : #E44A62 couleur noir/gris : #343434 -->
+    </head>
+    <body>
+        <header>
+            <?php include('templates/header.php')?>
+        </header>
 
 
+-----
+    <?php
+        echo $_SESSION['email'];
+    ?>
 
+        <footer>
+            <?php include('templates/footer.php')?>
+        </footer>
 
-
-<!-- <?php include('./templates/footer.php')?> -->
-
-</body>
+    </body>
 </html>
