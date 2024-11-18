@@ -38,7 +38,8 @@ class UserModel {
         if ($user) {
             if (password_verify($password, $user['MotDePasse'])) {
                 // Le mot de passe est correct
-                $_SESSION['email'] = $email;
+                $_SESSION['UserID'] = $user['UserID'];
+                $_SESSION['Email'] = $user['Email'];
                 $_SESSION['NomUtilisateur'] = $user['NomUtilisateur'];
                 $_SESSION['Nom'] = $user['Nom'];
                 $_SESSION['Prenom'] = $user['Prenom'];
@@ -48,7 +49,6 @@ class UserModel {
                 $_SESSION['VueProfil'] = $user['VueProfil'];
                 $_SESSION['DateInscription'] = $user['DateInscription'];
                 $_SESSION['is_admin'] = $user['is_admin'];
-                echo "connectéé";
                 header('location: ../View/home.php');
                 exit();
             } else {

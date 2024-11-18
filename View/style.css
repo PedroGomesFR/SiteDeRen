@@ -14,13 +14,12 @@ header{
     padding: 0!important;
     margin: 0!important;
 }
-
 footer{   
-    display: inline-block;
-    width: 100%;
     background-color: #E44A62;
-    padding: 0!important;
-    margin: 0!important;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; 
 }
 .header-container {
     display: flex;

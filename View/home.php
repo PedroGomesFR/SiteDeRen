@@ -11,7 +11,13 @@
         <header>
             <?php include('templates/header.php')?>
         </header>
+
+
 -----
+    <?php
+        echo $_SESSION['email'];
+    ?>
+
         <footer>
             <?php include('templates/footer.php')?>
         </footer>

@@ -14,10 +14,8 @@ switch ($action) {
     case 'register':
         $controller = new UserController();
         $controller->register();
-        echo"connectée";
         break;
     case 'login':
-        echo"connectée";
          $controller = new UserController();
         $controller->login();
          break;

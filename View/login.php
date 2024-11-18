@@ -11,7 +11,9 @@
         <div class="container-wrapper">
             <div class="container">
                 <img src="./img/logo.png" alt="logo">
+
                 <form action="../index.php?action=login" method="post">
+                    
                     <div class="form-title">
                         <h1>Connexion</h1>
                     </div>

@@ -14,13 +14,42 @@
                 <h1>Rencontre plus</h1>
 
                 <div class="liens">
-                    <a href="/SiteDeRen/View/login.php">Connexion/Inscription</a>
+
+                    <?php 
+        session_start(); 
+        if (isset($_SESSION['UserID'])) {
+    ?>
+                    <div class="lien6">
+                        <a href="#">Mon Profile</a>
+                    </div>
+
+                    <?php
+        if (isset($_SESSION['is_admin'])) {
+    ?>
+                    <div class="lien6">
+                        <a href="admin.php">Admin</a>
+                    </div>
+
+                <?php
+        }else{
+
+            }
+    ?>
+
+                <?php
+        } else {
+        
+    ?>
+                    <a href="/SiteDeRen/View/login.php">Se Connecter</a>
+                    <?php
+    }
+    ?>
+
                     <a href="">Annonce</a>
                     <a href="">Recherche</a>
                     <a href="">Likes</a>
                 </div>
             </div>
         </header>
-
     </body>
 </html>
