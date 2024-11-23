@@ -31,7 +31,7 @@
                         <input type="date" name="age" placeholder="Age" class="Age" required>
                     </div>
                     <div class="form-submit">
-                        <input type="submit" value="Connexion" class="boutton">
+                        <input type="submit" value="register"  name="register"  id="register" class="boutton">
                     </div>
                     <div class="form-submit">
                         <a href="login.php">deja un compte?</a>

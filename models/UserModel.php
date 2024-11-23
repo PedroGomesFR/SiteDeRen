@@ -1,5 +1,4 @@
 <?php
-
 class UserModel {
     
     private $db;
@@ -21,11 +20,9 @@ class UserModel {
         $stmt->bindParam(':DateNaissance', $age);
     
         if ($stmt->execute()) {
-            echo "Enregistrement réussi !";
             return true;
         } else {
             $error = $stmt->errorInfo();
-            echo "Erreur lors de l'enregistrement : " . $error[2];
             return false;
         }
     }
@@ -51,7 +48,8 @@ class UserModel {
                 $_SESSION['VueProfil'] = $user['VueProfil'];
                 $_SESSION['DateInscription'] = $user['DateInscription'];
                 $_SESSION['is_admin'] = $user['is_admin'];
-                header('location: ../View/register.php');
+                header('location: ../View/home.php');
+                exit;
             } else {
                 // Redirection avec message d'erreur pour le mot de passe incorrect
                 header('Location: ./View/login.php?error=Mot de passe incorrect');

@@ -1,18 +1,18 @@
 <?php
-session_start()
+session_start();
 // Routeur
-require_once 'controllers/BaseController.php';
-require_once 'controllers/AuthController.php';
 require_once 'controllers/UserController.php';
 require_once 'models/DataBase.php';
 require_once 'models/UserModel.php';
+require_once 'View/templates/header.php';
 
-echo 'Welcome';
 
-if (isset($_POST['action'])) {
 
-    $action = $_POST['action'];
+if (isset($_POST['Envoi'])) {
 
+    $action = $_POST['Envoi'];
+    var_dump($action);
+    
     switch ($action) {
         case 'register':
             echo "register";
@@ -20,19 +20,19 @@ if (isset($_POST['action'])) {
             $controller->register();
             break;
         case 'login':
+            echo "login";
             $controller = new UserController();
             $controller->login();
             break;
         case 'home':
-            echo "home";
             include 'View/home.php';
             break;
         default:
-            echo "erreur";
-            echo "Erreur 404 : Page non trouvée";
+            include 'View/home.php';
+            echo"Erreur : default switch";
             break;
     }
 } else {
-    echo "dehors";
+    
 }
 ?>

@@ -16,7 +16,7 @@
                 <div class="liens">
 
                     <?php 
-        session_start(); 
+    
         if (isset($_SESSION['UserID'])) {
     ?>
                     <div class="lien6">
