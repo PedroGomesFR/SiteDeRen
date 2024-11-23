@@ -4,7 +4,6 @@ class BaseController {
     protected $userModel;
 
     public function __construct() {
-        session_start();
         $this->initializeModels();
     }
 

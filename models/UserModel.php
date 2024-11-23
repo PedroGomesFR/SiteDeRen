@@ -1,10 +1,12 @@
 <?php
-class UserModel {
 
+class UserModel {
+    
     private $db;
     public $errorMessages = [];
-
+    
     public function __construct($db) {
+        
         $this->db = $db;
     }
 
@@ -29,7 +31,7 @@ class UserModel {
     }
 
     public function getUser($email, $password) {
-        session_start();
+        
         $sql = "SELECT * FROM utilisateur WHERE Email = :email";
         $stmt = $this->db->prepare($sql);
         $stmt->execute(['email' => $email]);
@@ -49,8 +51,7 @@ class UserModel {
                 $_SESSION['VueProfil'] = $user['VueProfil'];
                 $_SESSION['DateInscription'] = $user['DateInscription'];
                 $_SESSION['is_admin'] = $user['is_admin'];
-                header('location: ../View/home.php');
-                exit();
+                header('location: ../View/register.php');
             } else {
                 // Redirection avec message d'erreur pour le mot de passe incorrect
                 header('Location: ./View/login.php?error=Mot de passe incorrect');

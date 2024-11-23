@@ -1,10 +1,11 @@
 <?php
+
 require_once 'BaseController.php';
 require_once 'models/UserModel.php';
 require_once 'models/UserRepository.php';
 require_once './models/DataBase.php';
 
-class UserController extends BaseController {
+class UserController{
     private $db;
     public $errorMessages = [];
 
@@ -42,8 +43,9 @@ class UserController extends BaseController {
 
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST['Email'];
-            $password = $_POST['Password'];
+
+            $email = $_SESSION['Email'];
+            $password = $_SESSION['Password'];
             // Appel à la méthode getUser pour tenter de se connecter
             $userModel = new UserModel($this->db);
             $userModel->getUser($email, $password);

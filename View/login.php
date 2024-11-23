@@ -2,18 +2,17 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>RP</title>
     </head>
     <body>
-
         <div class="container-wrapper">
             <div class="container">
                 <img src="./img/logo.png" alt="logo">
 
-                <form action="../index.php?action=login" method="post">
-                    
+                <form action="../index.php" method="post">
+                    <input type="hidden" name="action" value="login">
                     <div class="form-title">
                         <h1>Connexion</h1>
                     </div>

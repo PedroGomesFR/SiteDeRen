@@ -14,9 +14,7 @@
 
 
 -----
-    <?php
-        echo $_SESSION['email'];
-    ?>
+  
 
         <footer>
             <?php include('templates/footer.php')?>
