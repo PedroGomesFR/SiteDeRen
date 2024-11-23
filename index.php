@@ -7,11 +7,14 @@ require_once 'models/UserModel.php';
 require_once 'View/templates/header.php';
 
 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-if (isset($_POST['Envoi'])) {
+        if (isset($_POST['login'])){
+            $action = $_POST['login'];
+        }else{
+            $action = $_POST['register'];
+        }
 
-    $action = $_POST['Envoi'];
-    var_dump($action);
     
     switch ($action) {
         case 'register':
@@ -19,7 +22,7 @@ if (isset($_POST['Envoi'])) {
             $controller = new UserController();
             $controller->register();
             break;
-        case 'login':
+        case 'Connexion':
             echo "login";
             $controller = new UserController();
             $controller->login();
@@ -28,11 +31,9 @@ if (isset($_POST['Envoi'])) {
             include 'View/home.php';
             break;
         default:
-            include 'View/home.php';
             echo"Erreur : default switch";
+            include 'View/home.php';
             break;
     }
-} else {
-    
 }
 ?>

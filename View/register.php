@@ -11,7 +11,7 @@
         <div class="container-wrapper">
             <div class="container">
                 <img src="./img/logo.png" alt="logo">
-                <form action="../index.php?action=register" method="post">
+                <form action="../index.php" method="post">
                     <div class="form-title">
                         <h1>inspription</h1>
                     </div>
@@ -39,4 +39,5 @@
                 </form>
             </div>
         </div>
+    </body>
     </html>

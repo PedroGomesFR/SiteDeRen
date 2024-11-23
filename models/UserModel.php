@@ -35,7 +35,7 @@ class UserModel {
     
         $user = $stmt->fetch();
         if ($user) {
-            if (password_verify($password, $user['MotDePasse'])) {
+            if (password_verify($password, $user['Pwd'])) {
                 // Le mot de passe est correct
                 $_SESSION['UserID'] = $user['UserID'];
                 $_SESSION['Email'] = $user['Email'];
@@ -48,7 +48,7 @@ class UserModel {
                 $_SESSION['VueProfil'] = $user['VueProfil'];
                 $_SESSION['DateInscription'] = $user['DateInscription'];
                 $_SESSION['is_admin'] = $user['is_admin'];
-                header('location: ../View/home.php');
+                header('location: ./View/home.php');
                 exit;
             } else {
                 // Redirection avec message d'erreur pour le mot de passe incorrect
