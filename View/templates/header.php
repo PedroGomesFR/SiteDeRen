@@ -20,7 +20,7 @@
         if (isset($_SESSION['UserID'])) {
     ?>
                     <div class="lien6">
-                        <a href="#">Mon Profile</a>
+                        <a href="Profil.php">Mon Profile</a>
                     </div>
 
                     <?php

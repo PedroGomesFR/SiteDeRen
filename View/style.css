@@ -116,3 +116,26 @@ header h1 {
 .piedfooter{
     background-color: #E44A62;
 }
+
+.profileWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.shapeImg{
+    border-radius: 50%;
+    background-color: white;
+    float: left;
+    margin: 20px;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+.imgPro{
+    width: 50%;
+}
+.info{
+    width: 50%;
+}
