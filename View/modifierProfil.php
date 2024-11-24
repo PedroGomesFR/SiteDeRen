@@ -18,20 +18,23 @@
 
     <div class="profileWrapper">
             <div class="profileHead">
-
-                <div class="imgPro">
-                    <div class="shapeImg">
+                <form action="updateProfile" method="post" enctype="multipart/form-data">
+                    <div class="imgPro">
+                        <div class="shapeImg">
+                        </div>
                     </div>
-                </div>
 
-                <div class="infoProfil">
-                    
-                    <textarea id="discription" name="discription" maxlength="500">
-                    <?php echo $_SESSION['Discription'];?>
-                    </textarea>
-                    
-                </div>
-        
+                    <div class="infoProfil">
+                        
+                        <textarea id="discription" name="discription" maxlength="500">
+                            <?php echo $_SESSION['Discription'];?>
+                        </textarea>
+
+                        <input type="file" name="image" accept="image/*" required>
+                        <input type="submit" value="Upload">
+                        
+                    </div>
+                </form>
                 
             </div>
     </div>

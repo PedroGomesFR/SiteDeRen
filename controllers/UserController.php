@@ -60,5 +60,9 @@ class UserController{
         return $age;
         var_dump($age);
     }
+
+    public function profilUpdate(){
+        
+    }
 }
 ?>
