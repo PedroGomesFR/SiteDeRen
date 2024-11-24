@@ -61,6 +61,21 @@ class UserModel {
             exit();
         }
     }
+
+    public function updateUser($photoProfile) {
+        $sql = "INSERT INTO utilisateur (Photoprofile) WHERE UserID =:id VALUES (:photoProfile)";
+        $stmt = $this->db->prepare($sql);
+        // $stmt->bindParam(':Discription', $description);
+        $stmt->bindParam(':Photoprofile', $photoProfile);
+        $stmt->bindParam(':id', $_SESSION['UserID']);
+    
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            $error = $stmt->errorInfo();
+            return false;
+        }
+    }
     
 }
 

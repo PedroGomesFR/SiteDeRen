@@ -18,7 +18,8 @@
 
     <div class="profileWrapper">
             <div class="profileHead">
-                <form action="updateProfile" method="post" enctype="multipart/form-data">
+
+                <form action="../index.php" method="post" enctype="multipart/form-data">
                     <div class="imgPro">
                         <div class="shapeImg">
                         </div>
@@ -31,7 +32,7 @@
                         </textarea>
 
                         <input type="file" name="image" accept="image/*" required>
-                        <input type="submit" value="Upload">
+                        <input type="submit" value="updateProfile" name="updateProfile"  id="updateProfile">
                         
                     </div>
                 </form>

@@ -11,8 +11,12 @@ require_once 'View/templates/header.php';
 
         if (isset($_POST['login'])){
             $action = $_POST['login'];
-        }else{
+
+        }elseif (isset($_POST['register'])){
             $action = $_POST['register'];
+
+        }else{
+            $action = $_POST['updateProfile'];
         }
 
     
@@ -26,6 +30,11 @@ require_once 'View/templates/header.php';
             echo "login";
             $controller = new UserController();
             $controller->login();
+            break;
+        case 'updateProfile':
+            echo "updateProfile";
+            $controller = new UserController();
+            $controller->updateProfile();
             break;
         case 'home':
             include 'View/home.php';

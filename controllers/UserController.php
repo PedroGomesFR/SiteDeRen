@@ -1,6 +1,6 @@
 <?php
-require_once '../models/UserModel.php';
-require_once '../models/DataBase.php';
+require_once './models/UserModel.php';
+require_once './models/DataBase.php';
 
 class UserController{
     private $db;
@@ -61,8 +61,19 @@ class UserController{
         var_dump($age);
     }
 
-    public function profilUpdate(){
-        
+    public function updateProfile(){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if(isset($_FILES['image'])) {
+                $file = $_FILES['image'];
+                
+                // Read the image file content
+                $image_data = file_get_contents($file['tmp_name']);
+
+                $updateUser = new UserModel($this->db);
+                $updateUser->updateUser($image_data);
+                
+            }
+        }
     }
 }
 ?>
