@@ -1,6 +1,6 @@
 <?php
-require_once 'models/UserModel.php';
-require_once './models/DataBase.php';
+require_once '../models/UserModel.php';
+require_once '../models/DataBase.php';
 
 class UserController{
     private $db;
@@ -27,8 +27,7 @@ class UserController{
                 // Redirection vers une page de succès
                 header('Location: ./View/login.php');
                 exit;
-            } else {
-               
+            }else{               
             }
         } else {
             
@@ -45,6 +44,21 @@ class UserController{
             $userModel = new UserModel($this->db);
             $userModel->getUser($email, $password);
         }
+    }
+
+    public function logout() {
+        session_start();
+        session_destroy();
+        header('Location:./View/login.php');
+        exit;
+    }
+
+    //age du User
+    public function getAge(){
+        $dateNaissance = $_SESSION['DateNaissance'];
+        $age = date('Y') - date('Y', strtotime($dateNaissance));
+        return $age;
+        var_dump($age);
     }
 }
 ?>

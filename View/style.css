@@ -118,7 +118,7 @@ header h1 {
 }
 
 .profileWrapper {
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     margin-top: 20px;
 }
@@ -128,14 +128,24 @@ header h1 {
     background-color: white;
     float: left;
     margin: 20px;
-    min-width: 300px;
-    min-height: 300px;
-    max-width: 300px;
-    max-height: 300px;
+    min-width: 200px;
+    min-height: 200px;
 }
 .imgPro{
+    float: none;
+    align-items: center;
+    
+    width: auto;
     width: 50%;
 }
 .info{
+    align-self: center;
+    text-align: left;
     width: 50%;
+    flex-grow: 1;
+}
+
+.infoProfil{
+    font-size: larger;
+    font-weight: bold;
 }

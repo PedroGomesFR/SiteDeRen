@@ -2,6 +2,9 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
+    require_once '../controllers/UserController.php';
+    $userController = new UserController();
+    $age = $userController->getAge();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,10 +26,17 @@
 
                 </div>
             </div>
-            
-            <div class="info">
-                <p><?php echo $_SESSION['Prenom']; ?></p>
-                <p><?php echo $_SESSION['Nom']; ?></p>
+
+            <div class="infoProfil">
+                
+                <p><?php echo $_SESSION['Prenom'] ." ". $_SESSION['Nom'] .", ". $age; ?> </p>
+
+                <p><?php echo $_SESSION['Discription'];?></p>
+                
+            </div>
+
+            <div class="btnProfil">
+                <a href="modifierProfil.php">Modifier mon profil</a>
             </div>
             
         </div>
