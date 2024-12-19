@@ -15,8 +15,10 @@ require_once 'View/templates/header.php';
         }elseif (isset($_POST['register'])){
             $action = $_POST['register'];
 
-        }else{
+        }elseif (isset($_POST['updateProfile'])){
             $action = $_POST['updateProfile'];
+        }else{
+            $action = $_POST['deconnexion'];
         }
 
     
@@ -35,6 +37,10 @@ require_once 'View/templates/header.php';
             echo "updateProfile";
             $controller = new UserController();
             $controller->updateProfile();
+            break;
+        case 'deconnexion':
+            $controller = new UserController();
+            $controller->logout();
             break;
         case 'home':
             include 'View/home.php';

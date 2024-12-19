@@ -1,8 +1,9 @@
 <?php
-require_once './models/UserModel.php';
-require_once './models/DataBase.php';
+require_once __DIR__ . '/../models/UserModel.php';
+require_once __DIR__ . '/../models/DataBase.php';
 
 class UserController{
+
     private $db;
     public $errorMessages = [];
 
@@ -49,7 +50,7 @@ class UserController{
     public function logout() {
         session_start();
         session_destroy();
-        header('Location:./View/login.php');
+        header('Location: ../View/home.php');
         exit;
     }
 
@@ -75,5 +76,12 @@ class UserController{
             }
         }
     }
+
+    public function getUserProfileImage() {
+        $userId = $_SESSION['UserID'];
+        $userModel = new UserModel($this->db);
+        $imageData = $userModel->getUserProfileImage($userId);
+        return $imageData;
+        }
 }
 ?>

@@ -48,6 +48,7 @@ class UserModel {
                 $_SESSION['VueProfil'] = $user['VueProfil'];
                 $_SESSION['DateInscription'] = $user['DateInscription'];
                 $_SESSION['is_admin'] = $user['is_admin'];
+                $_SESSION['PhotoProfile'] = $user['Photoprofil'];
                 header('location: ./View/home.php');
                 exit;
             } else {
@@ -63,10 +64,9 @@ class UserModel {
     }
 
     public function updateUser($photoProfile) {
-        $sql = "INSERT INTO utilisateur (Photoprofile) WHERE UserID =:id VALUES (:photoProfile)";
+        $sql = "UPDATE utilisateur SET Photoprofile = :photoProfile WHERE UserID = :id";
         $stmt = $this->db->prepare($sql);
-        // $stmt->bindParam(':Discription', $description);
-        $stmt->bindParam(':Photoprofile', $photoProfile);
+        $stmt->bindParam(':photoProfile', $photoProfile);
         $stmt->bindParam(':id', $_SESSION['UserID']);
     
         if ($stmt->execute()) {
@@ -76,7 +76,14 @@ class UserModel {
             return false;
         }
     }
-    
+
+    public function getUserProfileImage($userId) {
+        $sql = "SELECT Photoprofile FROM utilisateur WHERE UserID = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+        }
 }
 
 ?>
