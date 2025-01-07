@@ -1,10 +1,12 @@
 <?php
+define('BASE_PATH', __DIR__);
+
 session_start();
 // Routeur
-require_once 'controllers/UserController.php';
-require_once 'models/DataBase.php';
-require_once 'models/UserModel.php';
-require_once 'View/templates/header.php';
+require_once BASE_PATH . '/controllers/UserController.php';
+require_once BASE_PATH . '/models/Database.php';
+require_once BASE_PATH . '/models/UserModel.php';
+require_once BASE_PATH . '/View/templates/header.php';
 
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +23,6 @@ require_once 'View/templates/header.php';
             $action = $_POST['deconnexion'];
         }
 
-    
     switch ($action) {
         case 'register':
             echo "register";

@@ -32,6 +32,7 @@
                         </textarea>
 
                         <input type="file" name="image" accept="image/*" required>
+
                         <input type="submit" value="updateProfile" name="updateProfile"  id="updateProfile">
                         
                     </div>

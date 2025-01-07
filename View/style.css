@@ -149,3 +149,13 @@ header h1 {
     font-size: larger;
     font-weight: bold;
 }
+
+.profileImage {
+    width: 100px; /* Le diamètre est deux fois le rayon */
+    height: 100px; /* Hauteur égale à la largeur */
+    border-radius: 50px; /* Rayon de 50px pour rendre l'image ronde */
+    object-fit: cover; /* Ajuste l'image pour remplir le conteneur sans distorsion */
+    overflow: hidden; /* Cache les parties dépassant le conteneur */
+    border: 2px solid #ddd; /* Optionnel : une bordure pour styliser */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute un effet d'ombre */
+}

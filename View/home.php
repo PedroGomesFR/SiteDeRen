@@ -16,15 +16,10 @@ if (session_status() === PHP_SESSION_NONE) {
     <body>
 
             <?php include('templates/header.php')?>
-        
-
 
   <?php var_dump($_SESSION); ?>
   
-
-        
             <?php include('templates/footer.php')?>
-        
-
+    
     </body>
 </html>
