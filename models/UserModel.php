@@ -37,25 +37,24 @@ class UserModel {
         $user = $stmt->fetch();
         if ($user) {
             if (password_verify($password, $user['Pwd'])) {
-                $dateNaissance = new DateTime($user['DateNaissance']);
-                $dateInscription = new DateTime($user['DateInscription']);
-                $userDescription = $user['Discription'] ?? "";
+                
 
                 // Le mot de passe est correct
-                $_SESSION['user'] = new User(
-                    $user['UserID'],
-                    $user['Email'],
-                    $user['Nom'],
-                    $user['Prenom'],
-                    $dateNaissance,
-                    $dateInscription,
-                    $user['is_admin'],
-                    $user['Photoprofile'],
-                    $userDescription
-                );
-
-                header('Location: ./View/home.php');
-                exit;
+                // session_start();
+                // $_SESSION['user'] = new User(
+                //     $user['UserID'],
+                //     $user['Email'],
+                //     $user['Nom'],
+                //     $user['Prenom'],
+                //     $dateNaissance,
+                //     $dateInscription,
+                //     $user['is_admin'],
+                //     $user['Photoprofile'],
+                //     $userDescription
+                // );
+                return $user;
+                // header('Location: ./View/home.php');
+                // exit;
             } else {
                 // Redirection avec message d'erreur pour le mot de passe incorrect
                 header('Location: ./View/login.php?error=Mot de passe incorrect');
@@ -68,14 +67,14 @@ class UserModel {
         }
     }
 
-    public function updateUser($photoProfile) {
+    public function updateUser($photoProfile, $id) {
         $sql = "UPDATE utilisateur SET Photoprofile = :photoProfile WHERE UserID = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':photoProfile', $photoProfile);
-        $stmt->bindParam(':id', $_SESSION['UserID'], PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id);
     
         if ($stmt->execute()) {
-            $_SESSION['PhotoProfile'] = $photoProfile; // Mettez à jour la session
+            echo 'Insertion reussie';
             return true;
         } else {
             $error = $stmt->errorInfo();

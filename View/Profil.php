@@ -1,13 +1,13 @@
 <?php 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
 require_once '../models/UserModel.php';
 require_once '../controllers/UserController.php';
 require_once '../models/User.php';
-$userController = new UserController();
-$age = $userController->getAge();
-$imageData = $userController->getUserProfileImage();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// $userController = new UserController();
+
+// $imageData = $userController->getUserProfileImage();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,19 +24,16 @@ $imageData = $userController->getUserProfileImage();
 
             <div class="imgPro">
                 <div class="shapeImg profileImage">
-                    <!-- Affichage de l'image de profil -->
-                    <img src="<?php echo $imageData; ?>" alt="Photo de profil" class="profileImage">
-                    
-                    
+                 
 
                 </div>
             </div>
-            <img src="SiteDeRen/View/uploads/photo_profile/Male_default.png" alt="kjlnkjol">
+            <!-- <img src="SiteDeRen/View/uploads/photo_profile/Male_default.png" alt="kjlnkjol"> -->
             <div class="infoProfil">
 
-                <p><?php echo $_SESSION['user']->getPrenom() . " " . $_SESSION['user']->getNom() . ", " . $age; ?></p>
+                <p><?php echo $_SESSION['user']->getPrenom() . " " . $_SESSION['user']->getNom() . ", " . $_SESSION['user']->getAge(); ?></p>
 
-                <p><?php echo $_SESSION['Discription']; ?></p>
+                <p><?php echo $_SESSION['user']->getDiscription(); ?></p>
                 
             </div>
 

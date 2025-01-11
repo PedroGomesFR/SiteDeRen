@@ -2,10 +2,12 @@
 if (!defined('BASE_PATH')) {
     define('BASE_PATH', dirname(__DIR__, 2)); // Adjust based on the relative position of the file
 }
+
 require_once BASE_PATH . '/models/User.php'; // Ensure the User class is included
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +24,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="liens">
                     <?php 
                     // Debugging statements
-                    var_dump(User::isConnected()); // Check if user is connected
+                    // var_dump(User::isConnected()); // Check if user is connected
 
                     if (User::isConnected()) { ?>
                         <div class="lien6">

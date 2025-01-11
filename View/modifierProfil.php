@@ -28,7 +28,7 @@
                     <div class="infoProfil">
                         
                         <textarea id="discription" name="discription" maxlength="500">
-                            <?php echo $_SESSION['Discription'];?>
+                            
                         </textarea>
 
                         <input type="file" name="image" accept="image/*" required>

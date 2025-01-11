@@ -1,9 +1,5 @@
 <?php
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 class User {
     private int $id;
     private string $email;
@@ -100,11 +96,18 @@ class User {
     }
 
     static public function isConnected(): bool {
-        return isset($_SESSION['user']) && $_SESSION['user'] instanceof User;
+        return isset($_SESSION['user']);
     }
 
     static public function isAdmin(): bool {
         return isset($_SESSION['user']) && $_SESSION['user'] instanceof User && $_SESSION['user']->getAdmin();
+    }
+
+    public function getAge(): int {
+        $dateNaissance = $this->getDateNaissance();
+        $now = new DateTime();
+        $age = $now->diff($dateNaissance)->y;
+        return $age;
     }
 }
 ?>
