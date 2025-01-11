@@ -1,14 +1,17 @@
 <?php
 define('BASE_PATH', __DIR__);
-
+require_once __DIR__ . '/autoload.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Routeur
 require_once BASE_PATH . '/controllers/UserController.php';
 require_once BASE_PATH . '/models/Database.php';
 require_once BASE_PATH . '/models/UserModel.php';
 require_once BASE_PATH . '/View/templates/header.php';
-require_once __DIR__ . '/autoload.php';
-session_start();
+
+
 
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -5,9 +5,8 @@ require_once '../models/User.php';
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-// $userController = new UserController();
-
-// $imageData = $userController->getUserProfileImage();
+$userControler = new UserController;
+$PhotoDePofile = $userControler->getUserProfileImage();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,12 +21,13 @@ if (session_status() === PHP_SESSION_NONE) {
     <div class="profileWrapper">
         <div class="profileHead">
 
-            <div class="imgPro">
-                <div class="shapeImg profileImage">
+            <!-- <div class="imgPro">
+                <div class="shapeImg profileImage"> -->
                  
+                <img src="<?php echo $userControler->getUserProfileImage(); ?>" alt="Profile Image" style="max-width: 200px;">
 
-                </div>
-            </div>
+                <!-- </div>
+            </div> -->
             <!-- <img src="SiteDeRen/View/uploads/photo_profile/Male_default.png" alt="kjlnkjol"> -->
             <div class="infoProfil">
 

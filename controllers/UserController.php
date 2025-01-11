@@ -95,12 +95,25 @@ class UserController{
         }
     }
 
+
     public function getUserProfileImage() {
-        $userId = $_SESSION['user']->getId();
-        $userModel = new UserModel($this->db);
-        $imageData = $userModel->getUserProfileImage($userId);
-        // Retournez l'image de profil ou une image par défaut
-        return $imageData['Photoprofile'] ?? 'SiteDeRen/View/uploads/photo_profile/Male_default.png';
+        $PhotoProfile = $_SESSION['user']->getPhotoProfile();
+        $imagePath = $PhotoProfile ? $PhotoProfile : 'SiteDeRen/View/uploads/photo_profile/Male_default.png';
+        echo "Image Path: " . $imagePath; // For debugging
+        return $imagePath;
     }
+    
+    
+    
+    //file_get_contents('SiteDeRen/View/uploads/photo_profile/Male_default.png')
+
+    // public function getUserProfileImage() {
+    //     $PhotoProfile = $_SESSION['user']->getPhotoProfile();
+    //     // Check if there's a custom image, otherwise use a default
+    //     return $PhotoProfile ? $PhotoProfile : 'SiteDeRen/View/uploads/photo_profile/Male_default.png';
+    // }
+    
 }
+
+echo "UserControler.php inclus!"
 ?>

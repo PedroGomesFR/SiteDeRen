@@ -58,7 +58,7 @@ class User {
         return $this->is_admin;
     }
 
-    public function getPhotoProfile(): string {
+    public function getPhotoProfile(){
         return $this->photoProfile;
     }
 
@@ -91,7 +91,7 @@ class User {
         $this->is_admin = $is_admin;
     }
 
-    public function setPhotoProfile(string $photoProfile): void {
+    public function setPhotoProfile($photoProfile): void {
         $this->photoProfile = $photoProfile;
     }
 
